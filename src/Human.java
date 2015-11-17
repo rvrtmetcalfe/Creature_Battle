@@ -13,5 +13,4 @@ public class Human extends Creature {
         setHitPoints(5,30);
         setStrength(5,18);
     }
-
 }

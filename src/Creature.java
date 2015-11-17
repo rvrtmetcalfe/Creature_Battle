@@ -11,15 +11,22 @@ methods - int damage() a random number between 1 and strength
 public class Creature {
     private int strength;
     private int hitPoints;
-
+    private boolean isAlive=true;
+    Creature(int strength,int hitPoints){
+        this.strength=strength;
+        this.hitPoints=hitPoints;
+    }
      Creature(){
          setStrength(5,10);
          setHitPoints(5,10);
-        }
+         if(hitPoints<0){boolean isAlive=false;}
+     }
+    public void takeDamage(int damage){
+        hitPoints = getHitPoints()-damage;
+    }
     public int getDamage(){return randMinMax(1,getStrength());}
     public int getStrength(){return strength;}
-    public void setStrength(int minRange, int maxRange){
-        strength=randMinMax(minRange,maxRange);}
+    public void setStrength(int minRange, int maxRange){strength=randMinMax(minRange,maxRange);}
     public int getHitPoints(){
         return hitPoints;
     }
