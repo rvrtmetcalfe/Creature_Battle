@@ -11,6 +11,7 @@ public class Demon extends Creature {
         setHitPoints(5,40);
     }
     public int getDamage(){
+        super.getDamage();
         if(rand(20)==6){
             return (randMinMax(1,getStrength())+50);}else{
             return (randMinMax(1,getStrength()));}
